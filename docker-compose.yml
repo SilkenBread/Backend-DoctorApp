@@ -1,0 +1,12 @@
+services:
+  web-ap:
+    build: .
+    image: uvdoctorapp
+    environment:
+      - TZ=America/Bogota
+    container_name: hoze.emcali.net.co
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/uvdoctorapp
+    ports:
+      - "8090:8000"
